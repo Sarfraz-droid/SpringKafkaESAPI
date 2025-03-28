@@ -39,7 +39,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable Long id) {
+    public Product getProductById(@PathVariable("id") Long id) {
         return productRepository.findById(id)
                 .orElse(null);
     }
@@ -52,7 +52,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public Product updateProduct(@PathVariable Long id, @RequestBody Product updatedProduct) {
+    public Product updateProduct(@PathVariable("id") Long id, @RequestBody Product updatedProduct) {
         Product product = productRepository.findById(id)
                 .orElse(null);
         if (product != null) {
@@ -64,7 +64,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteProduct(@PathVariable Long id) {
+    public void deleteProduct(@PathVariable("id") Long id) {
         productRepository.deleteById(id);
     }
 }

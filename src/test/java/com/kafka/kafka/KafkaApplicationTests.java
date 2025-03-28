@@ -8,6 +8,8 @@ class KafkaApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("contextLoads");
+		assert true;
 	}
 
 }
